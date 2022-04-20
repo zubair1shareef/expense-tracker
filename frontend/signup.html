@@ -10,18 +10,22 @@
 <body>
     <div class="container">
        
-        <form class="formCont">
-            <h1 class="signuptitle">SIGNUP</h1>
-
+        <form class="formCont" id="formCont" >
+            
+            <h1>SIGNUP </h1>
             <label for="name">Name</label>
-            <input type="text" placeholder="enter name" name="name">
+            <input id="name" type="text" placeholder="enter name" name="name">
+
             <label for="email">Email</label>
-            <input type="text" placeholder="Enter Email" name="email">
+            <input id="email" type="text" placeholder="Enter Email" name="email">
+
             <label for="pswd">password</label>
-            <input type="text" placeholder="Enter Password" name="pswd">
+            <input id="password" type="text" placeholder="Enter Password" name="pswd">
+
             <label for="re-pswd">password</label>
-            <input type="text" placeholder="ReEnter Password" name="repswd">
-            <button class="submitbtn" type="submit">submit</button>
+            <input id="repassword" type="text" placeholder="ReEnter Password" name="repswd">
+
+            <button class="submitbtn" >submit</button>
     
     
         </form>
@@ -31,4 +35,6 @@
     
     
 </body>
+<script src="./signup.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

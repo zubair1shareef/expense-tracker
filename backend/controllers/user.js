@@ -16,7 +16,7 @@ exports.createUser=async(req,res)=>{
     await  User.findAll({where:{email}}).then(ress=>{
         if(ress.length>0){
            
-            res.json({msg:"user already exists"})
+            res.json({msg:"User already exists, Please Login"})
         }
         pass=''
          bcrypt.hash(password, saltRounds, function(err, hash) {
@@ -34,7 +34,7 @@ exports.createUser=async(req,res)=>{
     
         })
         .then(()=>{
-            res.json({name:req.body.name,email:req.body.email,pass})
+            res.json({name:req.body.name,email:req.body.email,pass,msg:"Successfuly signed up"})
     
         })
         .catch(err=>{
