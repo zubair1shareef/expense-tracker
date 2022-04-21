@@ -11,6 +11,7 @@ form.addEventListener('submit',async(e)=>{
     console.log(data.status)
        if(data.status==200){
         console.log(data)
+        window.location.replace('./home.html');
        }
        else if(data.status==404){
         console.log("user not found") 
