@@ -76,6 +76,7 @@ body {
   border-radius: 7px;
   margin: 20px auto;
   background-color: rgba(71, 71, 247, 0.791);
+  cursor: pointer;
 }
 
 .container .formCont .have_account {
@@ -83,5 +84,7 @@ body {
   margin: 0  auto;
   color: #5841b6;
   cursor: pointer;
+  -webkit-box-shadow: 2px 2px 11px rgba(67, 67, 67, 0.74);
+          box-shadow: 2px 2px 11px rgba(67, 67, 67, 0.74);
 }
 /*# sourceMappingURL=signup.css.map */
