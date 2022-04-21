@@ -2,18 +2,20 @@
     margin: 0;
 }
 body{
-    background: linear-gradient(90deg, rgba(222,6,6,0.2133987384016106) 5%, rgba(200,190,31,0.18818865436799714) 39%, rgba(40,65,223,0.22460322019432777) 69%);
+    background-image: url('https://plexcollectionposters.com/images/2021/05/16/background-images-for-login-page3bc68c53b0db224b.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
+    
 }
 .container{
     box-shadow: 10px 10px 15px 10px rgba(0, 0, 0, 0.551);
         -webkit-box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
     width:40% ;
-    height: 60%;
+    height: 70%;
     border-radius: 10px;
     overflow: hidden;
     
@@ -22,28 +24,35 @@ body{
     .formCont{
         width:100% ;
         height: 100%;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.278);
        
         display: flex;
         flex-direction: column;
         padding: 20px;
-        .signuptitle{
+        .signup_img{
+            width: 80px;
             margin: 0 auto;
         }
+        .signuptitle{
+            margin: 0 auto;
+           
+        }
+       
         label{
             
             margin-top: 10px;
             margin-bottom: 4px;
         }
         input{
-           
-            
-            list-style: none;
-           
-            outline: none;
+            background-color: rgba(255, 255, 255, 0.881);
+      
+            border: none;
+            border: 1px solid rgba(128, 128, 128, 0.541);
+            border-radius: 4px;
             width: 90%;
             height: 30px;
             border-radius: 6px;
+            
         }
        .submitbtn{
            border: none;
@@ -55,6 +64,12 @@ body{
            margin: 20px auto;
            background-color: rgba(71, 71, 247, 0.791);
 
+        }
+        .have_account{
+            text-underline-offset: none;
+            margin: 0  auto;
+            color:rgb(88, 65, 182);
+            cursor: pointer;
         }
     }
    

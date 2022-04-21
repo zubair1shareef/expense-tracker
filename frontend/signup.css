@@ -3,8 +3,7 @@
 }
 
 body {
-  background: -webkit-gradient(linear, left top, right top, color-stop(5%, rgba(222, 6, 6, 0.213399)), color-stop(39%, rgba(200, 190, 31, 0.188189)), color-stop(69%, rgba(40, 65, 223, 0.224603)));
-  background: linear-gradient(90deg, rgba(222, 6, 6, 0.213399) 5%, rgba(200, 190, 31, 0.188189) 39%, rgba(40, 65, 223, 0.224603) 69%);
+  background-image: url("https://plexcollectionposters.com/images/2021/05/16/background-images-for-login-page3bc68c53b0db224b.jpg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,6 +14,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  width: 100%;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
   -webkit-box-shadow: 10px 10px 65px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 65px 0px rgba(0, 0, 0, 0.75);
   width: 40%;
-  height: 60%;
+  height: 70%;
   border-radius: 10px;
   overflow: hidden;
   display: -webkit-box;
@@ -33,7 +33,7 @@ body {
 .container .formCont {
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.278);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,6 +42,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 20px;
+}
+
+.container .formCont .signup_img {
+  width: 80px;
+  margin: 0 auto;
 }
 
 .container .formCont .signuptitle {
@@ -54,8 +59,10 @@ body {
 }
 
 .container .formCont input {
-  list-style: none;
-  outline: none;
+  background-color: rgba(255, 255, 255, 0.881);
+  border: none;
+  border: 1px solid rgba(128, 128, 128, 0.541);
+  border-radius: 4px;
   width: 90%;
   height: 30px;
   border-radius: 6px;
@@ -69,5 +76,12 @@ body {
   border-radius: 7px;
   margin: 20px auto;
   background-color: rgba(71, 71, 247, 0.791);
+}
+
+.container .formCont .have_account {
+  text-underline-offset: none;
+  margin: 0  auto;
+  color: #5841b6;
+  cursor: pointer;
 }
 /*# sourceMappingURL=signup.css.map */
