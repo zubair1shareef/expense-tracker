@@ -10,8 +10,12 @@ form.addEventListener('submit',async(e)=>{
    }).then(data=>{
     console.log(data.status)
        if(data.status==200){
-        console.log(data)
-        window.location.replace('./home.html');
+        console.log(data.data.token)
+        console.log(data.data.email)
+        console.log(data.data.name)
+        localStorage.setItem("token",data.data.token)
+        localStorage.setItem("user",JSON.stringify({'name':data.data.name,'email':data.data.email}))
+       
        }
        else if(data.status==404){
         console.log("user not found") 
@@ -21,6 +25,8 @@ form.addEventListener('submit',async(e)=>{
        }
        
 
+   }).then(()=>{
+         window.location.replace('./home.html');
    })
    .catch(error=>{
        console.log(error)

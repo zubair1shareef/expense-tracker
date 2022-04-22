@@ -23,7 +23,7 @@ body {
   -moz-box-shadow: 10px 10px 65px 0px rgba(0, 0, 0, 0.75);
   width: 40%;
   height: 70%;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,6 +31,8 @@ body {
 }
 
 .container .formCont {
+  -webkit-backdrop-filter: blur(0.2em);
+          backdrop-filter: blur(0.2em);
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.278);
@@ -80,11 +82,8 @@ body {
 }
 
 .container .formCont .have_account {
-  text-underline-offset: none;
+  color: black;
   margin: 0  auto;
-  color: #5841b6;
   cursor: pointer;
-  -webkit-box-shadow: 2px 2px 11px rgba(67, 67, 67, 0.74);
-          box-shadow: 2px 2px 11px rgba(67, 67, 67, 0.74);
 }
 /*# sourceMappingURL=signup.css.map */

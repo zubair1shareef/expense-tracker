@@ -58,8 +58,8 @@ exports.loginUser=(req,res)=>{
 
             bcrypt.compare(password,pass).then((ress)=>{
                 if(ress){
-                    var token = jwt.sign({id: id }, 'jsddsfjk83bsjfbh87bdskfj');
-                    res.status(200).json({msg:"login sucessfull",token:token,email:email})
+                    var token = jwt.sign({id: id },'jsddsfjk83bsjfbh87bdskfj');
+                    res.status(200).json({msg:"login sucessfull",token:token,email:email,name:name})
                 }
                 else{
                     res.status(401).json({msg:"login failed"})

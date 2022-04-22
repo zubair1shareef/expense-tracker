@@ -28,6 +28,7 @@ body{
     
 }
 .login_container{
+    backdrop-filter: blur(0.2em); 
     width:450px ;
     height: 400px;
     background-color: rgba(255, 255, 255, 0.295);

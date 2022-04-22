@@ -6,7 +6,9 @@ body{
     width: 100%;
     background-image: url('https://plexcollectionposters.com/images/2021/05/16/background-images-for-login-page3bc68c53b0db224b.jpg');
     backdrop-filter: blur(1em); 
-}
+        background-repeat: no-repeat;
+        background-size: cover;
+}  
 .container{
     
     height: 100%;
@@ -24,6 +26,10 @@ body{
    height: 30%;
  
    .expense_from{
+       border: 6px solid rgba(39, 65, 180, 0.551);
+    -webkit-box-shadow: -20px 13px 74px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -20px 13px 74px 0px rgba(0,0,0,0.75);
+    box-shadow: -20px 13px 74px 0px rgba(0,0,0,0.75);
        background-color: white;
        height: 80%;
        width: 18%;
