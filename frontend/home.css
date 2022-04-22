@@ -27,6 +27,18 @@ body {
   font-family: 'Hind Siliguri', sans-serif;
 }
 
+.container .premium_btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.container .premium_btn button {
+  background-color: orange;
+  border: none;
+  border: 6px solid rgba(39, 65, 180, 0.551);
+}
+
 .expense_form_container {
   height: 30%;
 }
@@ -89,5 +101,66 @@ body {
 
 .expense_show_container {
   height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.expense_show_container .expense {
+  width: 70%;
+  height: 450px;
+  background-color: white;
+  border: 6px solid rgba(39, 65, 180, 0.551);
+  -webkit-box-shadow: -20px 13px 74px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 20px 13px 14px 0px rgba(43, 42, 42, 0.442);
+  border-radius: 15px;
+}
+
+.expense_show_container .expense .expense_show_form {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.expense_show_container .expense .expense_show_form .expense_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.expense_show_container .expense .expense_show_form .expense_header p {
+  margin-right: 10px;
+  font-weight: 900;
+}
+
+.expense_show_container .expense .expense_show_form .expense_item_cont {
+  height: 390px;
+  overflow-y: scroll;
+}
+
+.expense_show_container .expense .expense_show_form .expense_item_cont .expense_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.expense_show_container .expense .expense_show_form .expense_item_cont .expense_item p {
+  margin-right: 10px;
+  font-weight: 400;
 }
 /*# sourceMappingURL=home.css.map */
