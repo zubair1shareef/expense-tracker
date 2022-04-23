@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded',async()=>{
             const prebtn=document.getElementById('premium_btn')
             premimum=true
             premimumFun(premimum)
-            prebtn.innerHTML='<h2 class="Premi_umuser"p>Premium USER</h2>'
+            prebtn.innerHTML='<h2 class="Premi_umuser"p>Premium USER</h2> <button class="leader_board" id="leader_board">leaderboard</button>'
+            redirectToLeaderBoard()
 
         }
         else{
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
     })
     .then(data=>{
         console.log(data.data)
-        data=data.data
+        data=data.data.expense
         for(let i=0;i<data.length;i++){
             expense_item_cont.innerHTML=  expense_item_cont.innerHTML+` <div class="expense_item">
             <p>${count}</p>
@@ -181,3 +182,11 @@ function buypremimum(){
     })
 }
 buypremimum()
+
+function redirectToLeaderBoard(){
+    document.getElementById('leader_board').addEventListener('click',()=>{
+        console.log('fsf')
+        window.location.replace('./leaderBoard.html');
+    
+    })
+}

@@ -11,6 +11,8 @@ const { isAuthenticate } = require("../auth/loginVerify");
 const router = express.Router();
 router.post('/addexpense',isAuthenticate,expenseController.addExpense)
 router.get('/getexpense',isAuthenticate,expenseController.getExpense)
+router.get('/getallexpense',expenseController.getAllExpense)
+router.get('/getexpensebyid/:userId',expenseController.getExpenseById)
 
 
 module.exports = router;

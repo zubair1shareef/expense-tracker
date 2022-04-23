@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 var jwt = require('jsonwebtoken');
+const Expense = require("../models/expense");
 const saltRounds = 10;
 
 exports.createUser = async (req, res) => {
@@ -78,4 +79,35 @@ exports.loginUser=(req,res)=>{
     })
 
 
+}
+
+exports.getAllUserWithExpense=async(req,res)=>{
+  User.findAll().then(async(users)=>{
+    var UserAndExpense=[]
+    var alldata={};
+    for(let i=0;i<users.length;i++){
+    await  Expense.findAll({where:{userId:users[i].id}}).then(expense=>{
+      var totalexpense=0;
+      for(let i=0;i<expense.length;i++){
+        totalexpense=totalexpense+expense[i].expenseamount
+
+      }
+        alldata={
+          ...users[i].dataValues,
+          
+          totalexpense
+        }
+        console.log(alldata);
+      })
+      UserAndExpense.push(alldata)
+      
+
+    }
+    
+
+    res.json(UserAndExpense)
+
+    
+    
+  })
 }
