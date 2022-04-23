@@ -37,6 +37,14 @@ body {
   background-color: orange;
   border: none;
   border: 6px solid rgba(39, 65, 180, 0.551);
+  cursor: pointer;
+}
+
+.container .Premi_umuser {
+  color: white;
+  background-color: #cf8433;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .expense_form_container {

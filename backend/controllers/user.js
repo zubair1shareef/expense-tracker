@@ -15,20 +15,20 @@ exports.createUser = async (req, res) => {
       if (ress.length > 0) {
         res.json({ msg: "User already exists, Please Login" });
       }
-      pass = "";
+      
       bcrypt.hash(password, saltRounds, function (err, hash) {
         
         User.create({
             name: name,
             email: email,
-            phonenumber: 5695451,
+            phonenumber: 5645,
             password: hash,
           })
             .then(() => {
               res.json({
                 name: req.body.name,
                 email: req.body.email,
-                pass,
+               
                 msg: "Successfuly signed up",
               });
             })

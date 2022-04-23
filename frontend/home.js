@@ -1,6 +1,7 @@
 const expenseForm=document.getElementById('expense_from')
 
 const expense_item_cont=document.getElementById('expense_item_cont')
+const token= localStorage.getItem('token')
 let count=1;
 document.addEventListener('DOMContentLoaded',async()=>{
 
@@ -8,18 +9,25 @@ document.addEventListener('DOMContentLoaded',async()=>{
     var body = document.getElementsByTagName("BODY")[0]; 
     const expense=document.getElementById('expense')
     const expense_from=document.getElementById('expense_from')
-    let premimum=true;
-    if(premimum){
-        
-        expense_from.style.backgroundColor = "rgba(0, 0, 0, 0.855)"
-        expense_from.style.color = "white"
-        expense.style.backgroundColor = "rgba(0, 0, 0, 0.855)"
-        body.style.backgroundImage  = "url('https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX24284715.jpg')"
-        expense.style.color = "white"
-        
+    var tokenn= localStorage.getItem('token')
+    let premimum=false;
 
+   await axios.get('http://localhost:3000/getLatestPaymentUpdate',{ headers: {"Authorization" : tokenn} }).then(premimumdata=>{
+        if(premimumdata.data[0].status=='SUCCESSFUL'){
+            const prebtn=document.getElementById('premium_btn')
+            premimum=true
+            premimumFun(premimum)
+            prebtn.innerHTML='<h2 class="Premi_umuser"p>Premium USER</h2>'
 
-    }
+        }
+        else{
+            premimumFun(false)
+        }
+    })
+
+   
+   
+   
 
     console.log('dom loadeed')
     const token= localStorage.getItem('token')
@@ -56,6 +64,7 @@ expenseForm.addEventListener('submit',async(e)=>{
     const token= localStorage.getItem('token')
     console.log(token)
 
+   
     axios.post('http://localhost:3000/addexpense',{
         expenseamount ,
         description,
@@ -85,3 +94,90 @@ console.log(data.description)
 
 
 })
+
+
+let premimum=false;
+ function premimumFun(premimum){
+    const expense_item_cont=document.getElementById('expense_item_cont')
+    var body = document.getElementsByTagName("BODY")[0]; 
+    const expense=document.getElementById('expense')
+    const expense_from=document.getElementById('expense_from')
+ 
+   
+    if(premimum){
+        
+        expense_from.style.backgroundColor = "#1f1e1f"
+        expense_from.style.color = "white"
+        expense.style.backgroundColor = "#1f1e1f"
+        body.style.backgroundImage  = "url('https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX24284715.jpg')"
+        expense.style.color = "white"
+        
+
+
+    }
+    else{
+         
+        expense_from.style.backgroundColor = "white"
+        expense_from.style.color = "black"
+        expense.style.backgroundColor = "white"
+        body.style.backgroundImage  = "url('https://plexcollectionposters.com/images/2021/05/16/background-images-for-login-page3bc68c53b0db224b.jpg')"
+        expense.style.color = "black"
+
+    }
+        
+}
+
+
+function buypremimum(){
+    const premimumBtn=document.getElementById('premium_button')
+    premimumBtn.addEventListener('click', async (e)=>{
+        e.preventDefault();
+        const response  = await axios.get('http://localhost:3000/premiummembership', { headers: {"Authorization" : token} });
+        console.log(response);
+        var options =
+        {
+         "key": response.data.key_id, // Enter the Key ID generated from the Dashboard
+         "name": "Test Company",
+         "order_id": response.data.order.id, // For one time payment
+         "prefill": {
+           "name": "Test User",
+           "email": "test.user@example.com",
+           "contact": "7003442036"
+         },
+         "theme": {
+          "color": "#3399cc"
+         },
+         // This handler function will handle the success payment
+         "handler": function (response) {
+             console.log(response);
+             axios.post('http://localhost:3000/updatetransactionstatus',{
+                 order_id: options.order_id,
+                 payment_id: response.razorpay_payment_id,
+             }, { headers: {"Authorization" : token} }).then(() => {
+                
+                 alert('You are a Premium User Now')
+                 premimumFun(true)
+             }).catch(() => {
+                 alert('Something went wrong. Try Again!!!')
+             })
+         },
+      };
+
+
+      const rzp1 = new Razorpay(options);
+      rzp1.open();
+      e.preventDefault();
+
+      rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+    });
+
+    })
+}
+buypremimum()
