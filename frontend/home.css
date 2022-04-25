@@ -27,6 +27,19 @@ body {
   font-family: 'Hind Siliguri', sans-serif;
 }
 
+.container .logout {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.container .logout button {
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: red;
+}
+
 .container .premium_btn {
   position: absolute;
   right: 10px;

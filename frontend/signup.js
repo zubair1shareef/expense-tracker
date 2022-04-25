@@ -1,5 +1,15 @@
 const formm=document.getElementById('formCont')
 
+document.addEventListener('DOMContentLoaded',()=>{
+    token=localStorage.getItem('token')
+
+    if(token){
+        window.location.replace('./home.html');
+    }
+})
+
+
+
 formm.addEventListener('submit', (e)=>{
     e.preventDefault();
     

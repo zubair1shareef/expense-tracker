@@ -1,5 +1,13 @@
 const form=document.getElementById('login_form')
 
+document.addEventListener('DOMContentLoaded',()=>{
+    token=localStorage.getItem('token')
+
+    if(token){
+        window.location.replace('./home.html');
+    }
+})
+
 form.addEventListener('submit',async(e)=>{
     e.preventDefault();
    const email= e.target.email.value

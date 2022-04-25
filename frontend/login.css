@@ -91,4 +91,15 @@ body {
 .login_container .dont_have_account {
   margin-left: 28%;
 }
+
+.forgot_password {
+  width: 100%;
+  position: relative;
+}
+
+.forgot_password span a {
+  text-decoration: none;
+  position: absolute;
+  right: 26px;
+}
 /*# sourceMappingURL=login.css.map */

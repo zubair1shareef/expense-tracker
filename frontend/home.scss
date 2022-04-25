@@ -21,10 +21,25 @@ body{
     font-family: 'Gochi Hand', cursive;
 
     font-family: 'Hind Siliguri', sans-serif;
+
+    .logout{
+        position: absolute;
+        bottom:10px ;
+        right:10px;
+        
+        button{
+           height: 30px;
+           border-radius: 4px;
+           border: none;
+            background-color: red;  
+        }
+    }
+
     .premium_btn{
         position: absolute;
         right:10px ;
         top:10px;
+
         button{
             background-color: orange;
             border: none;

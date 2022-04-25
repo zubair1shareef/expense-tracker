@@ -1,9 +1,14 @@
 const expenseForm=document.getElementById('expense_from')
 
 const expense_item_cont=document.getElementById('expense_item_cont')
-const token= localStorage.getItem('token')
+var token= localStorage.getItem('token')
 let count=1;
 document.addEventListener('DOMContentLoaded',async()=>{
+   
+    var tokenn= localStorage.getItem('token')
+    if(!tokenn){
+        window.location.replace('./login.html');
+    }
 
     const expense_item_cont=document.getElementById('expense_item_cont')
     var body = document.getElementsByTagName("BODY")[0]; 
@@ -190,3 +195,14 @@ function redirectToLeaderBoard(){
     
     })
 }
+
+function logout(){
+    document.getElementById('logout_button').addEventListener('click',()=>{
+        console.log('fsf')
+        localStorage.clear();
+        window.location.replace('./login.html');
+    
+    })
+   
+}
+logout()
