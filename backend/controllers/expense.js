@@ -33,10 +33,11 @@ exports.getExpense=(req,res,next)=>{
 exports.getAllExpense=async(req,res)=>{
     Expense.findAll().then(data=>{
 
-        var k=data[0]
-        k['total']=424
+        var k={...data[0],total:423}
+       
+       
         console.log(k)
-        res.json(data.total)
+        res.json(k)
     })
 }
 exports.getExpenseById=(req,res)=>{
