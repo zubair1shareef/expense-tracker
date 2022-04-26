@@ -18,12 +18,16 @@ app.use(forgetPasswordRoutes)
 const User=require('./models/user')
 const Expense=require('./models/expense')
 const Order=require('./models/order')
+const forgetPassword=require('./models/forgotpassword')
 
 User.hasMany(Expense)
 Expense.belongsTo(User);
 
 User.hasMany(Order);
 Order.belongsTo(User);
+
+User.hasMany(forgetPassword)
+forgetPassword.belongsTo(User)
 
 
 
