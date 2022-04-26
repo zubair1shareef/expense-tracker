@@ -43,15 +43,17 @@ exports.forgotPassword = async (req, res) => {
               });
           })
           .catch((error) => {
-            console.log(error)
+           res.status(401).json(error)
           });
        
       } else {
-        throw new Error("User doesnt exist");
+        
+        res.status(401).json("User doesnt exist")
       }
     })
     .catch((err) => {
       console.log(err);
+      res.status(401).json(err)
     });
 };
 exports.resetPassword=(req,res)=>{
@@ -65,7 +67,7 @@ exports.resetPassword=(req,res)=>{
         res.status(200).send(
           `
           <html>
-          <h1> link is not working
+          <h1> link is expired
           </html>`
         )
 

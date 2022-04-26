@@ -47,6 +47,21 @@ body{
             cursor: pointer;
         }
     }
+    .details_btn{
+        position: absolute;
+        right:10px ;
+        top:50px;
+
+        button{
+            background-color: orange;
+            border: none;
+            border: 6px solid rgba(39, 65, 180, 0.551);
+            cursor: pointer;
+            a{
+                text-decoration: none
+            }
+        }
+    }
     .Premi_umuser{
         color: white;
         background-color: rgb(207, 132, 51);

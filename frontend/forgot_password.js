@@ -11,11 +11,15 @@ form.addEventListener('submit',(e)=>{
     console.log(e.target.email.value)
     var email=e.target.email.value
 
-    axios.post('http://localhost:3000/forgotpassword',{email}).then(()=>{
-        console.log('email send')
+    axios.post('http://localhost:3000/forgotpassword',{email}).then((data)=>{
+        console.log(data.data.message)
+        alert(data.data.message)
     })
     .catch(err=>{
-        console.log(err)})
+        
+        alert(err.response.data)
+    }
+        )
 
 })
 

@@ -53,6 +53,23 @@ body {
   cursor: pointer;
 }
 
+.container .details_btn {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+}
+
+.container .details_btn button {
+  background-color: orange;
+  border: none;
+  border: 6px solid rgba(39, 65, 180, 0.551);
+  cursor: pointer;
+}
+
+.container .details_btn button a {
+  text-decoration: none;
+}
+
 .container .Premi_umuser {
   color: white;
   background-color: #cf8433;
