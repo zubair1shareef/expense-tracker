@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="expense_item_cont" id="expense_item_cont">
-                    <div class="expense_header">
+                    <div class="expense_header" id="expense_header">
                         <p>1</p>
                         <p>234</p>
                         <p>fsdf</p>
@@ -53,28 +53,30 @@
 
         <!-- ---------------------yearly expense-------------------- -->
         <div class="yearly_expense_cont">
-            <h1>yearly expense</h1>
+            <h1>Download List Data</h1>
 
 
-            <div class="yearly_expense_form">
+            <div class="yearly_expense_form" id="downloadlist_form">
                 <div class="expense_header">
-                <p>month</p>
-                <p>income</p>
-                <p>expense</p>
-                <p>saving</p>
+                <p>date</p>
+                <p>link</p>
+               
+              
                 </div>
-                <div class="expense_header">
+                <div class="expense_header" >
                     <p>june</p>
-                    <p>10000</p>
-                    <p>6000</p>
-                    <p>4000</p>
-                    </div>
+                    <p><a href="#">click here to download</a></p>
+                    
+                 </div>
             </div>
            
         </div>
         <div class="download_btn_cont">
-            <button class="download_btn">download</button>
+            <button class="download_btn" id="download_btn">download</button>
         </div>
     </div>
+    <script src="./detail_expense.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </body>
 </html>

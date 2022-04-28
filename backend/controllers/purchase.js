@@ -49,7 +49,7 @@ exports.updateTransactionStatus = (req, res ) => {
         })
     } catch (err) {
         console.log(err);
-        res.status(403).json({ errpr: err, message: 'Sometghing went wrong' })
+        res.status(403).json({ errpr: err, message: 'Sometghing went wrong',status:"UNSUCCESSFUL" })
 
     }
 }

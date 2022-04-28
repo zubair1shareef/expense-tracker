@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded',async()=>{
     let premimum=false;
 
    await axios.get('http://localhost:3000/getLatestPaymentUpdate',{ headers: {"Authorization" : tokenn} }).then(premimumdata=>{
+       console.log(premimumdata)
+       if(premimumdata.data.length>0 ){
         if(premimumdata.data[0].status=='SUCCESSFUL'){
             const prebtn=document.getElementById('premium_btn')
             premimum=true
@@ -29,6 +31,9 @@ document.addEventListener('DOMContentLoaded',async()=>{
         else{
             premimumFun(false)
         }
+
+       }
+        
     })
 
    
