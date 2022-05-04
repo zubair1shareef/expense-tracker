@@ -243,4 +243,10 @@ body {
   text-decoration: none;
   color: #d4a31e;
 }
+
+.paginationCont {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
 /*# sourceMappingURL=home.css.map */

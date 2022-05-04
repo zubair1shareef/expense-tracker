@@ -16,18 +16,22 @@ exports.addExpense=(req,res,next)=>{
 
 }
 
-const Iteam_Per_Page=10
+
 
 exports.getExpense=(req,res,next)=>{
 
 
     const pageno=req.query.page||1
+    const totalRows=req.query.rowno
+    console.log("---------row-------",totalRows)
+    const Iteam_Per_Page=parseInt(totalRows)
     var totalpages,totalexpense;
 
     req.user.getExpenses().then(expense=>{
         console.log(typeof Number(JSON.stringify( expense[0].expenseamount)))
         var expencedata= expense
         totalpages=Math.ceil(expencedata.length/Iteam_Per_Page)
+        
       
     })
     req.user.getExpenses().then(expense=>{

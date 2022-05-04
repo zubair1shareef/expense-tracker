@@ -5,6 +5,8 @@ var token= localStorage.getItem('token')
 let count=1;
 document.addEventListener('DOMContentLoaded',async()=>{
    
+    document.getElementById('row-per-page').value=localStorage.getItem('noofrows')
+    
     var tokenn= localStorage.getItem('token')
     if(!tokenn){
         window.location.replace('./login.html');
@@ -48,7 +50,9 @@ document.addEventListener('DOMContentLoaded',async()=>{
     if(page.length>3){
         page=1
     }
-    await axios.get(`http://localhost:3000/getexpense?page=${page}`,{
+    var rows=localStorage.getItem('noofrows')
+    rows=rows || 10
+    await axios.get(`http://localhost:3000/getexpense?page=${page}&rowno=${rows}`,{
         headers:{"Authorization":token}
     })
     .then(data=>{
@@ -233,4 +237,9 @@ function CreatePagination(totalPages){
 
 
 
+}
+
+document.getElementById('row-per-page').onchange=function(e){
+    // console.log(typeof e.target.value)
+    localStorage.setItem('noofrows' ,e.target.value)
 }
