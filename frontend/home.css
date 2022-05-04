@@ -209,7 +209,7 @@ body {
 }
 
 .expense_show_container .expense .expense_show_form .expense_item_cont {
-  height: 390px;
+  height: 360px;
   overflow-y: scroll;
 }
 
@@ -225,5 +225,22 @@ body {
 .expense_show_container .expense .expense_show_form .expense_item_cont .expense_item p {
   margin-right: 10px;
   font-weight: 400;
+}
+
+.expense_show_container .expense .expense_show_form .pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.expense_show_container .expense .expense_show_form .pages a {
+  text-align: center;
+  border: 2px solid #d7d120;
+  width: 20px;
+  height: 25px;
+  text-decoration: none;
+  color: #d4a31e;
 }
 /*# sourceMappingURL=home.css.map */

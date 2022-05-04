@@ -9,6 +9,8 @@ const purchaseRoutes=require('./routes/purchase')
 const forgetPasswordRoutes=require('./routes/forgotPassword')
 const downloadlistRoutes=require('./routes/downloadlist')
 var cors = require('cors')
+
+
 app.use(cors())
 app.use(express.json());
 app.use(userRoutes)

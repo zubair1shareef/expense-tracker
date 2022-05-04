@@ -42,11 +42,18 @@ document.addEventListener('DOMContentLoaded',async()=>{
 
     console.log('dom loadeed')
     const token= localStorage.getItem('token')
-    await axios.get('http://localhost:3000/getexpense',{
+    
+    var page = location.href.split("page=").slice(-1)[0] || 1;
+    console.log(page)
+    if(page.length>3){
+        page=1
+    }
+    await axios.get(`http://localhost:3000/getexpense?page=${page}`,{
         headers:{"Authorization":token}
     })
     .then(data=>{
         console.log(data.data)
+        var totalpages=data.data.totalpages
         data=data.data.expense
         for(let i=0;i<data.length;i++){
             expense_item_cont.innerHTML=  expense_item_cont.innerHTML+` <div class="expense_item">
@@ -59,6 +66,9 @@ document.addEventListener('DOMContentLoaded',async()=>{
         </div>`
             count++;
         }
+        console.log(totalpages)
+
+        CreatePagination(totalpages)
        
 
     })
@@ -211,3 +221,16 @@ function logout(){
    
 }
 logout()
+
+function CreatePagination(totalPages){
+
+    const paginationContainer=document.getElementById('pagination')
+
+    for(let i=1;i<=totalPages;i++){
+        const a=`<a href="./home.html?page=${i}" >${i}</a>`
+        paginationContainer.innerHTML= paginationContainer.innerHTML+a
+    }
+
+
+
+}

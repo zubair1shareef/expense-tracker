@@ -184,7 +184,7 @@ body{
 
             }  
            .expense_item_cont{
-           height: 390px;
+           height: 360px;
            overflow-y: scroll;
            
           
@@ -201,6 +201,19 @@ body{
 
 
             }  
+
+            }
+            .pages{
+                display: flex;
+                justify-content: space-around;
+                a{
+                    text-align: center;
+                    border: 2px solid rgb(215, 209, 32);
+                    width: 20px;
+                    height: 25px;
+                    text-decoration: none;
+                    color: rgb(212, 163, 30);
+                }
 
             }
            

@@ -1,4 +1,3 @@
-
 const Expense=require('../models/expense')
 const User = require('../models/user')
 const Sequelize=require('sequelize')
@@ -17,19 +16,46 @@ exports.addExpense=(req,res,next)=>{
 
 }
 
+const Iteam_Per_Page=10
+
 exports.getExpense=(req,res,next)=>{
+
+
+    const pageno=req.query.page||1
+    var totalpages,totalexpense;
+
     req.user.getExpenses().then(expense=>{
         console.log(typeof Number(JSON.stringify( expense[0].expenseamount)))
         var expencedata= expense
+        totalpages=Math.ceil(expencedata.length/Iteam_Per_Page)
+      
+    })
+    req.user.getExpenses().then(expense=>{
+        console.log(typeof Number(JSON.stringify( expense[0].expenseamount)))
+        var expencedata= expense
+       
         var totalexpense=0;
         // console.log(expencedata[0].expenseamount);
         for(let i=0;i<expencedata.length;i++){
 
             totalexpense=totalexpense+expencedata[i].expenseamount
         }
-        console.log(totalexpense)
-        res.json({expense,totalexpense})
+      return totalexpense
+        // res.json({expense,totalexpense,totalpages})
     })
+    .then((totalexpense)=>{
+        req.user.getExpenses({offset:(pageno-1)*Iteam_Per_Page,limit:Iteam_Per_Page}).then(expense=>{
+            res.json({expense,totalexpense,totalpages})
+        })
+    })
+    
+
+   
+
+
+
+
+  
 
 }
 
