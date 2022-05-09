@@ -8,8 +8,15 @@ const expenseRoutes=require('./routes/expense')
 const purchaseRoutes=require('./routes/purchase')
 const forgetPasswordRoutes=require('./routes/forgotPassword')
 const downloadlistRoutes=require('./routes/downloadlist')
+const helmet = require("helmet");
 var cors = require('cors')
+var compression = require('compression')
+const fs = require('fs')
+var morgan = require('morgan')
 
+const acessLogStream=fs.createWriteStream(path.join(__dirname,'acess.log'),{
+    flags:'a'
+})
 
 app.use(cors())
 app.use(express.json());
@@ -18,6 +25,9 @@ app.use(expenseRoutes)
 app.use(purchaseRoutes)
 app.use(forgetPasswordRoutes)
 app.use(downloadlistRoutes)
+app.use(helmet());
+app.use(compression())
+app.use(morgan('combined',{stream:acessLogStream}))
 
 const User=require('./models/user')
 const Expense=require('./models/expense')

@@ -51,6 +51,11 @@ exports.getExpense=(req,res,next)=>{
         req.user.getExpenses({offset:(pageno-1)*Iteam_Per_Page,limit:Iteam_Per_Page}).then(expense=>{
             res.json({expense,totalexpense,totalpages})
         })
+        .catch(err=>{
+            console.log(err)
+        })
+    }).catch(err=>{
+        console.log(err)
     })
     
 
@@ -71,6 +76,8 @@ exports.getAllExpense=async(req,res)=>{
        
         console.log(k)
         res.json(k)
+    }).catch(err=>{
+        console.log(err)
     })
 }
 exports.getExpenseById=(req,res)=>{
@@ -82,9 +89,13 @@ exports.getExpenseById=(req,res)=>{
         User.findByPk(id).then((user)=>{
             res.json({expense,name:user.name})
 
+        }).catch(err=>{
+            console.log(err)
         })
 
        
+    }).catch(err=>{
+        console.log(err)
     })
 
 }
